@@ -13,11 +13,14 @@ int main(int argc, char* argv[])
     singlyLinkedList.createNewNode(4);
     singlyLinkedList.displayAllNodesSimplified();
 
-    singlyLinkedList.insertNewNodeAtBeginning(10);
-    singlyLinkedList.displayAllNodesSimplified();
+    //    singlyLinkedList.insertNewNodeAtBeginning(10);
+    //    singlyLinkedList.displayAllNodesSimplified();
 
-    singlyLinkedList.insertNewNodeAtEnd(20);
-    singlyLinkedList.displayAllNodesSimplified();
+    //    singlyLinkedList.insertNewNodeAtEnd(20);
+    //    singlyLinkedList.displayAllNodesSimplified();
+
+    //    singlyLinkedList.insertNewNodeAtPosition(2U, 42);
+    //    singlyLinkedList.displayAllNodesSimplified();
 
     return a.exec();
 }
