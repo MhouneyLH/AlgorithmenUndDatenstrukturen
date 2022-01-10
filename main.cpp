@@ -11,7 +11,9 @@ int main(int argc, char* argv[])
     singlyLinkedList.createNewNode(2);
     singlyLinkedList.createNewNode(3);
     singlyLinkedList.createNewNode(4);
+    singlyLinkedList.displayAllNodesSimplified();
 
+    singlyLinkedList.insertNewNodeAtBeginning(10);
     singlyLinkedList.displayAllNodesSimplified();
 
     return a.exec();

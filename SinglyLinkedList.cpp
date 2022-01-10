@@ -1,7 +1,7 @@
 #include "SinglyLinkedList.h"
 #include <QDebug>
 
-void SinglyLinkedList::createNewNode(int data)
+void SinglyLinkedList::createNewNode(const int data)
 {
     Node* tempNode = new Node();
     tempNode->data = data;
@@ -24,25 +24,34 @@ void SinglyLinkedList::createNewNode(int data)
 
 void SinglyLinkedList::displayAllNodesSimplified()
 {
-    Node* temp = new Node();
-    temp = m_head;
+    Node* tempNode = new Node();
+    tempNode = m_head;
 
     QString debugMessage = "";
 
-    while (temp != nullptr)
+    while (tempNode != nullptr)
     {
-        if (temp == m_head)
+        if (tempNode == m_head)
         {
-            debugMessage += "Node " + QString::number(temp->data);
+            debugMessage += "Node " + QString::number(tempNode->data);
         }
         else
         {
-            debugMessage += " --> Node " + QString::number(temp->data);
+            debugMessage += " --> Node " + QString::number(tempNode->data);
         }
 
-        temp = temp->nextNode;
+        tempNode = tempNode->nextNode;
     }
 
     // print the notes in one line
     qDebug().noquote() << debugMessage;
+}
+
+void SinglyLinkedList::insertNewNodeAtBeginning(const int data)
+{
+    Node* temp = new Node();
+    temp->data = data;
+    temp->nextNode = m_head;
+
+    m_head = temp;
 }
