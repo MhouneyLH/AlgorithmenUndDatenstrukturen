@@ -9,6 +9,10 @@ int main(int argc, char* argv[])
     singlyLinkedList.createNewNode(0);
     singlyLinkedList.createNewNode(1);
     singlyLinkedList.createNewNode(2);
+    singlyLinkedList.createNewNode(3);
+    singlyLinkedList.createNewNode(4);
+
+    singlyLinkedList.displayAllNodesSimplified();
 
     return a.exec();
 }

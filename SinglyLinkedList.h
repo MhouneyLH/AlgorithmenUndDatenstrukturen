@@ -11,6 +11,7 @@ class SinglyLinkedList
 {
 public:
     void createNewNode(int data);
+    void displayAllNodesSimplified();
 
 private:
     Node* m_head = nullptr; // beginning of SLL
