@@ -16,5 +16,8 @@ int main(int argc, char* argv[])
     singlyLinkedList.insertNewNodeAtBeginning(10);
     singlyLinkedList.displayAllNodesSimplified();
 
+    singlyLinkedList.insertNewNodeAtEnd(20);
+    singlyLinkedList.displayAllNodesSimplified();
+
     return a.exec();
 }

@@ -15,6 +15,7 @@ public:
     void createNewNode(const int data);
     void displayAllNodesSimplified();
     void insertNewNodeAtBeginning(const int data);
+    void insertNewNodeAtEnd(const int data);
 
 private:
     Node* m_head = nullptr; // beginning of SLL

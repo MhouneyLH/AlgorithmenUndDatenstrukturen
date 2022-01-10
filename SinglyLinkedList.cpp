@@ -49,9 +49,14 @@ void SinglyLinkedList::displayAllNodesSimplified()
 
 void SinglyLinkedList::insertNewNodeAtBeginning(const int data)
 {
-    Node* temp = new Node();
-    temp->data = data;
-    temp->nextNode = m_head;
+    Node* tempNode = new Node();
+    tempNode->data = data;
+    tempNode->nextNode = m_head;
 
-    m_head = temp;
+    m_head = tempNode;
+}
+
+void SinglyLinkedList::insertNewNodeAtEnd(const int data)
+{
+    createNewNode(data);
 }
