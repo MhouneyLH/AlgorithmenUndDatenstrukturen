@@ -83,6 +83,7 @@ void SinglyLinkedList::insertNewNodeAtPosition(const unsigned int position, cons
         currentNode = currentNode->nextNode;
     }
 
+    // insert the tempNode in between the previous and the current Node
     tempNode->data = data;
     tempNode->nextNode = currentNode;
     previousNode->nextNode = tempNode;
