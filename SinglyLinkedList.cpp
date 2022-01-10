@@ -36,8 +36,7 @@ void SinglyLinkedList::createNewNode(const int data)
 
 void SinglyLinkedList::displayAllNodesSimplified()
 {
-    Node* tempNode = new Node();
-    tempNode = m_headNode;
+    Node* tempNode = m_headNode;
 
     QString debugMessage = "";
 
@@ -75,10 +74,8 @@ void SinglyLinkedList::insertNewNodeAtEnd(const int data)
 void SinglyLinkedList::insertNewNodeAtPosition(const unsigned int position, const int data)
 {
     Node* tempNode = new Node();
-    Node* currentNode = new Node();
+    Node* currentNode = m_headNode;
     Node* previousNode = new Node();
-
-    currentNode = m_headNode;
 
     for (unsigned int i = 0U /* m_head will be skipped */; i < position; i++)
     {
@@ -89,4 +86,18 @@ void SinglyLinkedList::insertNewNodeAtPosition(const unsigned int position, cons
     tempNode->data = data;
     tempNode->nextNode = currentNode;
     previousNode->nextNode = tempNode;
+}
+
+unsigned int SinglyLinkedList::length() const
+{
+    Node* tempNode = m_headNode;
+    unsigned int nodeCount = 0U;
+
+    while (tempNode != nullptr)
+    {
+        nodeCount++;
+        tempNode = tempNode->nextNode;
+    }
+
+    return nodeCount;
 }

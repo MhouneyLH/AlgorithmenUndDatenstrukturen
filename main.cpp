@@ -1,5 +1,6 @@
-#include <QCoreApplication>
 #include "SinglyLinkedList.h"
+#include <QCoreApplication>
+#include <QDebug>
 
 int main(int argc, char* argv[])
 {
@@ -12,6 +13,7 @@ int main(int argc, char* argv[])
     singlyLinkedList.createNewNode(3);
     singlyLinkedList.createNewNode(4);
     singlyLinkedList.displayAllNodesSimplified();
+    qDebug().noquote() << "Length of SinglyLinkedList:" << QString::number(singlyLinkedList.length());
 
     //    singlyLinkedList.insertNewNodeAtBeginning(10);
     //    singlyLinkedList.displayAllNodesSimplified();

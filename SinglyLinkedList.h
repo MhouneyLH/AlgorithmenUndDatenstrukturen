@@ -20,6 +20,7 @@ public:
     void insertNewNodeAtBeginning(const int data);
     void insertNewNodeAtEnd(const int data);
     void insertNewNodeAtPosition(const unsigned int position, const int data);
+    unsigned int length() const;
 
 private:
     Node* m_headNode = nullptr; // beginning of SLL
