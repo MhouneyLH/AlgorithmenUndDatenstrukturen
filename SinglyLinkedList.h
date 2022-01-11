@@ -21,8 +21,6 @@ public:
     /////////////////////////////////////////////////
     /// GENERAL METHODS
     /////////////////////////////////////////////////
-    // creates a new node of the singlyLinkedList
-    void createNewNode(const int data);
     // displays the nodes in the format: "Node [data] --> nextNode [data] --> ..."
     void displayAllNodesSimplified();
     // returns the length of the singlyLinkedList
@@ -31,6 +29,16 @@ public:
     void deleteList();
     // clears the values of the singlyLinkedList
     void clearList();
+
+    /////////////////////////////////////////////////
+    /// CREATION OF NEW NODES
+    /////////////////////////////////////////////////
+    // creates a new node of the singlyLinkedList
+    void createNewNode(const int data);
+    // creates "numberOfNodes" new nodes of the singlyLinkedList and adds for every index a different value based on a QVector
+    void createMultipleNewNodes(const unsigned int numberOfNewNodes, const QVector<int> data);
+    // creates "numberOfNodes" new nodes of the singlyLinkedList and give it the data "data"
+    void createMultipleNewNodesWithTheSameData(const unsigned int numberOfNewNodes, const int data);
 
     /////////////////////////////////////////////////
     /// INSERTION OF NEW NODES
@@ -47,7 +55,7 @@ public:
     /////////////////////////////////////////////////
     // replaces a single node of the singlyLinkedList
     void replaceSingleNode(const unsigned int index, const int data);
-    // replaces multiple nodes of the singlyLinkedList and add for every index a different value based on a QVector
+    // replaces multiple nodes of the singlyLinkedList and adds for every index a different value based on a QVector
     void replaceMultipleNodes(const unsigned int startIndex, const unsigned int endIndex, const QVector<int> data);
     // replaces multiple nodes of the singlyLinkedList and give it the data "data"
     void replaceMultipleNodesWithTheSameData(const unsigned int startIndex, const unsigned int endIndex, const int data);

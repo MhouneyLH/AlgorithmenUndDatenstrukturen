@@ -37,6 +37,22 @@ void SinglyLinkedList::createNewNode(const int data)
     m_tailNode = m_tailNode->nextNode;
 }
 
+void SinglyLinkedList::createMultipleNewNodes(const unsigned int numberOfNewNodes, const QVector<int> data)
+{
+    for (unsigned int i = 0U; i < numberOfNewNodes; i++)
+    {
+        createNewNode(data.at(i));
+    }
+}
+
+void SinglyLinkedList::createMultipleNewNodesWithTheSameData(const unsigned int numberOfNewNodes, const int data)
+{
+    for (unsigned int i = 0U; i < numberOfNewNodes; i++)
+    {
+        createNewNode(data);
+    }
+}
+
 void SinglyLinkedList::displayAllNodesSimplified()
 {
     Node* tempNode = m_headNode;
