@@ -181,6 +181,42 @@ QVector<int> SinglyLinkedList::findAllNodesWithSpecificData(const int data)
 
 QVector<int> SinglyLinkedList::findFirstNodeDataPattern(const QVector<int> dataPattern)
 {
+    Node* tempNode = m_headNode;
+    Node* saveNode = m_headNode;
+    QVector<int> indexes;
+
+    // the whole singlyLinkedList
+    for (int currentIndex = 0; saveNode != nullptr; currentIndex++)
+    {
+        unsigned int rightIndexes = 0U;
+        saveNode = tempNode;
+
+        for (int i = 0; i < dataPattern.length(); i++)
+        {
+            if (tempNode->data != dataPattern.at(i))
+            {
+                tempNode = tempNode->nextNode;
+                continue;
+            }
+
+            tempNode = tempNode->nextNode;
+            rightIndexes++;
+        }
+
+        if (rightIndexes == dataPattern.length())
+        {
+            for (int i = 0; i < dataPattern.length(); i++)
+            {
+                indexes.push_back(currentIndex + i);
+            }
+            return indexes;
+        }
+
+        tempNode = saveNode;
+        tempNode = tempNode->nextNode;
+    }
+
+    return indexes;
 }
 
 QVector<QVector<int>> SinglyLinkedList::findAllNodesDataPatterns(const QVector<int> dataPattern)
