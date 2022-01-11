@@ -163,6 +163,20 @@ unsigned int SinglyLinkedList::findFirstNodeWithSpecificData(const int data)
 
 QVector<int> SinglyLinkedList::findAllNodesWithSpecificData(const int data)
 {
+    Node* tempNode = m_headNode;
+    QVector<int> indexes;
+
+    for (int currentIndex = 0; tempNode != nullptr; currentIndex++)
+    {
+        if (tempNode->data == data)
+        {
+            indexes.push_back(currentIndex);
+        }
+
+        tempNode = tempNode->nextNode;
+    }
+
+    return indexes;
 }
 
 QVector<int> SinglyLinkedList::findFirstNodeDataPattern(const QVector<int> dataPattern)
