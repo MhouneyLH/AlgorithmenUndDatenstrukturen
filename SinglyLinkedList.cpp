@@ -117,6 +117,14 @@ void SinglyLinkedList::replaceMultipleNodes(const unsigned int startIndex, const
     }
 }
 
+void SinglyLinkedList::replaceMultipleNodesWithTheSameData(const unsigned int startIndex, const unsigned int endIndex, const int data)
+{
+    for (unsigned int currentIndex = startIndex; currentIndex < endIndex + 1 /* +1, as the endIndex also has to be replaced */; currentIndex++)
+    {
+        replaceSingleNode(currentIndex, data);
+    }
+}
+
 unsigned int SinglyLinkedList::getLength() const
 {
     Node* tempNode = m_headNode;

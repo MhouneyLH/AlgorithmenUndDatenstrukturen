@@ -49,6 +49,8 @@ public:
     void replaceSingleNode(const unsigned int index, const int data);
     // replaces multiple nodes of the singlyLinkedList and add for every index a different value based on a QVector
     void replaceMultipleNodes(const unsigned int startIndex, const unsigned int endIndex, const QVector<int> data);
+    // replaces multiple nodes of the singlyLinkedList and give it the data "data"
+    void replaceMultipleNodesWithTheSameData(const unsigned int startIndex, const unsigned int endIndex, const int data);
 
 private:
     Node* m_headNode = nullptr; // beginning of singlyLinkedList
