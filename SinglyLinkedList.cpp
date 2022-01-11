@@ -9,6 +9,9 @@ SinglyLinkedList::SinglyLinkedList()
 
 SinglyLinkedList::~SinglyLinkedList()
 {
+    m_headNode = nullptr;
+    m_tailNode = nullptr;
+
     delete m_headNode;
     delete m_tailNode;
 }
@@ -114,7 +117,7 @@ void SinglyLinkedList::replaceMultipleNodes(const unsigned int startIndex, const
     }
 }
 
-unsigned int SinglyLinkedList::length() const
+unsigned int SinglyLinkedList::getLength() const
 {
     Node* tempNode = m_headNode;
     unsigned int nodeCount = 0U;
@@ -126,4 +129,20 @@ unsigned int SinglyLinkedList::length() const
     }
 
     return nodeCount;
+}
+
+void SinglyLinkedList::deleteList()
+{
+    this->~SinglyLinkedList();
+}
+
+void SinglyLinkedList::clearList()
+{
+    Node* tempNode = m_headNode;
+
+    while (tempNode != nullptr)
+    {
+        tempNode->data = 0;
+        tempNode = tempNode->nextNode;
+    }
 }

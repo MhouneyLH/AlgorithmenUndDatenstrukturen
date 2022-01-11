@@ -14,7 +14,10 @@ int main(int argc, char* argv[])
     singlyLinkedList.createNewNode(3);
     singlyLinkedList.createNewNode(4);
     singlyLinkedList.displayAllNodesSimplified();
-    qDebug().noquote() << "Length of SinglyLinkedList:" << QString::number(singlyLinkedList.length());
+    //    qDebug().noquote() << "Length of SinglyLinkedList:" << QString::number(singlyLinkedList.getLength());
+
+    //    singlyLinkedList.deleteList();
+    //    singlyLinkedList.clearList();
 
     //    singlyLinkedList.insertNewNodeAtBeginning(10);
     //    singlyLinkedList.insertNewNodeAtEnd(20);

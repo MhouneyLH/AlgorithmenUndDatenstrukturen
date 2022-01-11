@@ -26,8 +26,11 @@ public:
     // displays the nodes in the format: "Node [data] --> nextNode [data] --> ..."
     void displayAllNodesSimplified();
     // returns the length of the singlyLinkedList
-    // @TODO: create a private member and change this method to a getter-method
-    unsigned int length() const;
+    unsigned int getLength() const;
+    // deletes the singlyLinkedList
+    void deleteList();
+    // clears the values of the singlyLinkedList
+    void clearList();
 
     /////////////////////////////////////////////////
     /// INSERTION OF NEW NODES
