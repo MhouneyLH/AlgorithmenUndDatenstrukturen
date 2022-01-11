@@ -186,25 +186,20 @@ QVector<int> SinglyLinkedList::findFirstNodeDataPattern(const QVector<int> dataP
     QVector<int> indexes;
 
     // the whole singlyLinkedList
-    for (int currentIndex = 0; saveNode != nullptr; currentIndex++)
+    for (int currentIndex = 0; tempNode != nullptr; currentIndex++)
     {
-        unsigned int rightIndexes = 0U;
         saveNode = tempNode;
 
-        for (int i = 0; i < dataPattern.length(); i++)
+        // check of the single patterns
+        for (int i = 0; i < dataPattern.length() && tempNode != nullptr; i++)
         {
             if (tempNode->data != dataPattern.at(i))
             {
                 tempNode = tempNode->nextNode;
-                continue;
+                break;
             }
 
-            tempNode = tempNode->nextNode;
-            rightIndexes++;
-        }
-
-        if (rightIndexes == dataPattern.length())
-        {
+            // if every data is the same as the data from the dataPattern
             for (int i = 0; i < dataPattern.length(); i++)
             {
                 indexes.push_back(currentIndex + i);
