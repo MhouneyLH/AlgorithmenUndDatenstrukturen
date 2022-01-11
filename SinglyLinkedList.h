@@ -36,7 +36,7 @@ public:
     // creates a new node of the singlyLinkedList
     void createNewNode(const int data);
     // creates "numberOfNodes" new nodes of the singlyLinkedList and adds for every index a different value based on a QVector
-    void createMultipleNewNodes(const unsigned int numberOfNewNodes, const QVector<int> data);
+    void createMultipleNewNodes(const QVector<int> data);
     // creates "numberOfNodes" new nodes of the singlyLinkedList and give it the data "data"
     void createMultipleNewNodesWithTheSameData(const unsigned int numberOfNewNodes, const int data);
 
