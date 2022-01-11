@@ -141,6 +141,26 @@ void SinglyLinkedList::replaceMultipleNodesWithTheSameData(const unsigned int st
     }
 }
 
+unsigned int SinglyLinkedList::findFirstNodeWithSpecificData(const int data)
+{
+
+}
+
+QVector<int> SinglyLinkedList::findAllNodesWithSpecificData(const int data)
+{
+
+}
+
+QVector<int> SinglyLinkedList::findFirstNodeDataPattern(const QVector<int> dataPattern)
+{
+
+}
+
+QVector<QVector<int> > SinglyLinkedList::findAllNodesDataPatterns(const QVector<int> dataPattern)
+{
+
+}
+
 unsigned int SinglyLinkedList::getLength() const
 {
     Node* tempNode = m_headNode;

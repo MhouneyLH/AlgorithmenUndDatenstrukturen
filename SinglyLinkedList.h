@@ -60,6 +60,14 @@ public:
     // replaces multiple nodes of the singlyLinkedList and give it the data "data"
     void replaceMultipleNodesWithTheSameData(const unsigned int startIndex, const unsigned int endIndex, const int data);
 
+    /////////////////////////////////////////////////
+    /// FINDING OF NODES
+    /////////////////////////////////////////////////
+    unsigned int findFirstNodeWithSpecificData(const int data);
+    QVector<int> findAllNodesWithSpecificData(const int data);
+    QVector<int> findFirstNodeDataPattern(const QVector<int> dataPattern);
+    QVector<QVector<int>> findAllNodesDataPatterns(const QVector<int> dataPattern);
+
 private:
     Node* m_headNode = nullptr; // beginning of singlyLinkedList
     Node* m_tailNode = nullptr; // end of singlyLinkedList
