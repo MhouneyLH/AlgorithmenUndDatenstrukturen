@@ -63,9 +63,17 @@ public:
     /////////////////////////////////////////////////
     /// FINDING OF NODES
     /////////////////////////////////////////////////
+    // finds the first node with specific data in the singlyLinkedList
+    // IMPORTANT: if return-value = getLength() + 1, then no node with this data was found
+    // @TODO: better control of this case
     unsigned int findFirstNodeWithSpecificData(const int data);
+    // finds all nodes with specific data in the singlyLinkedList
     QVector<int> findAllNodesWithSpecificData(const int data);
+    // finds the first nodeDataPattern in the singlyLinkedList
+    // a nodeDataPattern is a pattern of data
+    // example: SinglyLinkedList is 0 1 2 3 4 5 6, so e.g. 1 2 3 is a nodeDataPattern
     QVector<int> findFirstNodeDataPattern(const QVector<int> dataPattern);
+    // finds all nodeDataPatterns in the singlyLinkedList
     QVector<QVector<int>> findAllNodesDataPatterns(const QVector<int> dataPattern);
 
 private:

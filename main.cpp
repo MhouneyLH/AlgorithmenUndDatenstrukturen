@@ -9,6 +9,8 @@ int main(int argc, char* argv[])
 
     SinglyLinkedList singlyLinkedList;
     singlyLinkedList.createMultipleNewNodes(3, {1, 2, 3});
+    const unsigned int z = singlyLinkedList.findFirstNodeWithSpecificData(6);
+    qDebug() << QString::number(z);
 
     singlyLinkedList.displayAllNodesSimplified();
 
