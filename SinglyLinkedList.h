@@ -1,7 +1,7 @@
 #ifndef SINGLYLINKEDLIST_H9CEDF55D8AF1402EACC7650BA7F8F921
 #define SINGLYLINKEDLIST_H9CEDF55D8AF1402EACC7650BA7F8F921
 
-/// TO ADD: replacing, deleting
+#include <QVector>
 
 // nodes are the individual components of the singlyLinkedList
 struct Node
@@ -37,7 +37,15 @@ public:
     // creates a new node at the end of the singlyLinkedList
     void insertNewNodeAtEnd(const int data);
     // creates a new node at a specific position of the singlyLinkedList
-    void insertNewNodeAtPosition(const unsigned int position, const int data);
+    void insertNewNodeAtPosition(const unsigned int index, const int data);
+
+    /////////////////////////////////////////////////
+    /// REPLACING OF NODES
+    /////////////////////////////////////////////////
+    // replaces a single node of the singlyLinkedList
+    void replaceSingleNode(const unsigned int index, const int data);
+    // replaces multiple nodes of the singlyLinkedList and add for every index a different value based on a QVector
+    void replaceMultipleNodes(const unsigned int startIndex, const unsigned int endIndex, const QVector<int> data);
 
 private:
     Node* m_headNode = nullptr; // beginning of singlyLinkedList

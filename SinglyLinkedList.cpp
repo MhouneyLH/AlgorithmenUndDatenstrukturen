@@ -71,13 +71,13 @@ void SinglyLinkedList::insertNewNodeAtEnd(const int data)
     createNewNode(data);
 }
 
-void SinglyLinkedList::insertNewNodeAtPosition(const unsigned int position, const int data)
+void SinglyLinkedList::insertNewNodeAtPosition(const unsigned int index, const int data)
 {
     Node* tempNode = new Node();
     Node* currentNode = m_headNode;
     Node* previousNode = new Node();
 
-    for (unsigned int i = 0U /* m_head will be skipped */; i < position; i++)
+    for (unsigned int i = 0U /* m_head will be skipped */; i < index; i++)
     {
         previousNode = currentNode;
         currentNode = currentNode->nextNode;
@@ -87,6 +87,31 @@ void SinglyLinkedList::insertNewNodeAtPosition(const unsigned int position, cons
     tempNode->data = data;
     tempNode->nextNode = currentNode;
     previousNode->nextNode = tempNode;
+}
+
+void SinglyLinkedList::replaceSingleNode(const unsigned int index, const int data)
+{
+    Node* tempNode = new Node();
+    Node* currentNode = m_headNode;
+    Node* previousNode = new Node();
+
+    for (unsigned i = 0U; i < index; i++)
+    {
+        previousNode = currentNode;
+        currentNode = currentNode->nextNode;
+    }
+
+    tempNode->data = data;
+    tempNode->nextNode = currentNode->nextNode;
+    previousNode->nextNode = tempNode;
+}
+
+void SinglyLinkedList::replaceMultipleNodes(const unsigned int startIndex, const unsigned int endIndex, const QVector<int> data)
+{
+    for (unsigned int currentIndex = startIndex; currentIndex < endIndex + 1 /* +1, as the endIndex also has to be replaced */; currentIndex++)
+    {
+        replaceSingleNode(currentIndex, data.at(currentIndex - startIndex));
+    }
 }
 
 unsigned int SinglyLinkedList::length() const

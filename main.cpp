@@ -1,5 +1,6 @@
 #include "SinglyLinkedList.h"
 #include <QCoreApplication>
+#include <QVector>
 #include <QDebug>
 
 int main(int argc, char* argv[])
@@ -16,12 +17,13 @@ int main(int argc, char* argv[])
     qDebug().noquote() << "Length of SinglyLinkedList:" << QString::number(singlyLinkedList.length());
 
     //    singlyLinkedList.insertNewNodeAtBeginning(10);
-    //    singlyLinkedList.displayAllNodesSimplified();
-
     //    singlyLinkedList.insertNewNodeAtEnd(20);
-    //    singlyLinkedList.displayAllNodesSimplified();
-
     //    singlyLinkedList.insertNewNodeAtPosition(2U, 42);
+
+    //    singlyLinkedList.replaceSingleNode(2U, 100);
+    //    const QVector<int> vector = {500, 1000, 3000};
+    //    singlyLinkedList.replaceMultipleNodes(2U, 4U, vector);
+
     //    singlyLinkedList.displayAllNodesSimplified();
 
     return a.exec();
