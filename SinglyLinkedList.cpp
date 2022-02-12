@@ -221,9 +221,10 @@ QVector<int> SinglyLinkedList::findFirstNodeDataPattern(const QVector<int> dataP
     return indexes;
 }
 
-QVector<QVector<int>> SinglyLinkedList::findAllNodesDataPatterns(const QVector<int> dataPattern)
-{
-}
+// @TODO: add this funtction only when needed in the future
+//QVector<QVector<int>> SinglyLinkedList::findAllNodesDataPatterns(const QVector<int> dataPattern)
+//{
+//}
 
 unsigned int SinglyLinkedList::getLength() const
 {
