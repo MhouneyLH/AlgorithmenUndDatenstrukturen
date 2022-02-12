@@ -56,7 +56,6 @@ void SinglyLinkedList::createMultipleNewNodesWithTheSameData(const unsigned int 
 void SinglyLinkedList::displayAllNodesSimplified()
 {
     Node* tempNode = m_headNode;
-
     QString debugMessage = "";
 
     while (tempNode != nullptr)
