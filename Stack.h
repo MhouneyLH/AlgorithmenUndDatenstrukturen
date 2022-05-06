@@ -7,12 +7,12 @@ public:
     Stack(const int maxSize, const int top, char* items);
     ~Stack();
 
-    void push(Stack* stack, const char data);
-    char peak(Stack* stack);
-    char pop(Stack* stack);
+    void push(const char data);
+    char peak();
+    char pop();
 
-    bool isEmpty(Stack* stack);
-    bool isFull(Stack* stack);
+    bool isEmpty();
+    bool isFull();
 
 private:
     int m_maxSize = 10;
