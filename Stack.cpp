@@ -2,9 +2,8 @@
 
 #include <QDebug>
 
-Stack::Stack(const int maxSize, const int top)
+Stack::Stack(const int maxSize)
     : m_maxSize(maxSize)
-    , m_top(top)
 {
     m_items = (char*)(malloc(sizeof(char) * maxSize));
 }
@@ -45,4 +44,18 @@ bool Stack::isEmpty()
 bool Stack::isFull()
 {
     return m_top == m_maxSize - 1;
+}
+
+void Stack::printValuesOfStack()
+{
+    if (isEmpty())
+    {
+        qDebug() << "Nothing can be printed out as the stack is currently empty.";
+        return;
+    }
+
+    for (int i = 0; i < m_top + 1; i++)
+    {
+        qDebug() << m_items[i];
+    }
 }

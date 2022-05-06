@@ -4,14 +4,14 @@
 class Stack
 {
 public:
-    Stack(const int maxSize, const int top);
+    Stack(const int maxSize);
     ~Stack();
 
     void push(const char data);
     char pop();
-
     bool isEmpty();
     bool isFull();
+    void printValuesOfStack();
 
 private:
     int m_maxSize = 10;
