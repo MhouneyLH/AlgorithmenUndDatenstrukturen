@@ -2,11 +2,11 @@
 
 #include <QDebug>
 
-Stack::Stack(const int maxSize, const int top, char* items)
+Stack::Stack(const int maxSize, const int top)
     : m_maxSize(maxSize)
     , m_top(top)
-    , m_items(items)
 {
+    m_items = (char*)(malloc(sizeof(char) * maxSize));
 }
 
 Stack::~Stack()
@@ -17,7 +17,7 @@ Stack::~Stack()
 
 void Stack::push(const char data)
 {
-    if (m_top == m_maxSize - 1)
+    if (isFull())
     {
         qDebug() << "Overflow, while pushing on the stack.";
         exit(EXIT_FAILURE);
@@ -26,13 +26,9 @@ void Stack::push(const char data)
     m_items[++m_top] = data;
 }
 
-char Stack::peak()
-{
-}
-
 char Stack::pop()
 {
-    if (m_top == -1)
+    if (isEmpty())
     {
         qDebug() << "Underflow while popping on the stack.";
         exit(EXIT_FAILURE);
@@ -43,8 +39,10 @@ char Stack::pop()
 
 bool Stack::isEmpty()
 {
+    return m_top == -1;
 }
 
 bool Stack::isFull()
 {
+    return m_top == m_maxSize - 1;
 }

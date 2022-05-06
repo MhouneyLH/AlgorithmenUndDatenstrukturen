@@ -4,11 +4,10 @@
 class Stack
 {
 public:
-    Stack(const int maxSize, const int top, char* items);
+    Stack(const int maxSize, const int top);
     ~Stack();
 
     void push(const char data);
-    char peak();
     char pop();
 
     bool isEmpty();
