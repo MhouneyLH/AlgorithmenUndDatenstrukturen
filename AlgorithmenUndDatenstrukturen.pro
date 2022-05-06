@@ -10,6 +10,7 @@ CONFIG -= app_bundle
 SOURCES += \
         BinaryTree.cpp \
         SinglyLinkedList.cpp \
+        Stack.cpp \
         main.cpp
 
 # Default rules for deployment.
@@ -19,4 +20,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     BinaryTree.h \
-    SinglyLinkedList.h
+    SinglyLinkedList.h \
+    Stack.h
