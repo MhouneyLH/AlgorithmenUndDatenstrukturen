@@ -4,16 +4,21 @@
 #include <QChar>
 #include <QString>
 
+// a datastructure of type LIFO
 class Stack
 {
 public:
     Stack(const int maxSize);
 
+    // give data on top of stack
     void push(const QChar& data);
+    // look, whats on top of the stack
     QChar peak() const;
+    // remove the item that is on top of the stack
     QChar pop();
     bool isEmpty();
     bool isFull();
+    // prints out every value of the stack
     void printValuesOfStack();
 
 private:

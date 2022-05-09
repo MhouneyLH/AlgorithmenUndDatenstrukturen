@@ -1,4 +1,5 @@
 #include "BinaryTree.h"
+
 #include <QDebug>
 
 //void BinaryTree::create(const int data)

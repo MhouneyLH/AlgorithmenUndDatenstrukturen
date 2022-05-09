@@ -1,4 +1,5 @@
 #include "SinglyLinkedList.h"
+
 #include <QDebug>
 
 SinglyLinkedList::SinglyLinkedList()
