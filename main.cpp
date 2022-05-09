@@ -3,12 +3,37 @@
 
 #include <QCoreApplication>
 
-static const char BRACKET_1_1 = '(';
-static const char BRACKET_1_2 = ')';
-static const char BRACKET_2_1 = '{';
-static const char BRACKET_2_2 = '}';
-static const char BRACKET_3_1 = '[';
-static const char BRACKET_3_2 = ']';
+bool areBracketsBalanced(const QString& expression)
+{
+    Stack tempStack(expression.length());
+
+    for (int i = 0; i < expression.length(); i++)
+    {
+        if (tempStack.isEmpty())
+        {
+            tempStack.push(expression.at(i));
+            continue;
+        }
+
+        // clang-format off
+        if((tempStack.peak() == '(' && expression.at(i) == ')')
+          || (tempStack.peak() == '{' && expression.at(i) == '}')
+          || (tempStack.peak() == '[' && expression.at(i) == ']'))
+        {
+            tempStack.pop();
+            continue;
+        }
+        // clang-format on
+
+        tempStack.push(expression[i]);
+    }
+
+    if (tempStack.isEmpty())
+    {
+        return true;
+    }
+    return false;
+}
 
 int main(int argc, char* argv[])
 {
@@ -19,23 +44,15 @@ int main(int argc, char* argv[])
 
     //    singlyLinkedList.displayAllNodesSimplified();
 
-    for (int i = 1; i < argc; i++)
+    const QString expression = "{({[]})}";
+    if (areBracketsBalanced(expression))
     {
+        qDebug() << expression << "is balanced! :)";
     }
-
-    Stack stack(10);
-    stack.push('(');
-    stack.push('{');
-    stack.push('[');
-    stack.push(']');
-    stack.push('}');
-    stack.push(')');
-    stack.printValuesOfStack();
-    stack.pop();
-    stack.pop();
-    stack.pop();
-    stack.pop();
-    stack.printValuesOfStack();
+    else
+    {
+        qDebug() << expression << "is not balanced! :(";
+    }
 
     return a.exec();
 }

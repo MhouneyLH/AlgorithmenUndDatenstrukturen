@@ -5,16 +5,10 @@
 Stack::Stack(const int maxSize)
     : m_maxSize(maxSize)
 {
-    m_items = (char*)(malloc(sizeof(char) * maxSize));
+    m_items.resize(maxSize, ' ');
 }
 
-Stack::~Stack()
-{
-    m_items = nullptr;
-    delete m_items;
-}
-
-void Stack::push(const char data)
+void Stack::push(const QChar& data)
 {
     if (isFull())
     {
@@ -25,7 +19,12 @@ void Stack::push(const char data)
     m_items[++m_top] = data;
 }
 
-char Stack::pop()
+QChar Stack::peak() const
+{
+    return m_items[m_top];
+}
+
+QChar Stack::pop()
 {
     if (isEmpty())
     {
